@@ -14,4 +14,8 @@ iptables -t filter -F OUTPUT
 iptables -t filter -F FORWARD
 iptables -t nat -F PREROUTING
 
+# Définition de la politique par defaut
+iptables -t filter -P INPUT -j DROP
+iptables -t filter -P FORWARD -j DROP
+iptables -t filter -P OUTPUT -j ACCEPT
 
