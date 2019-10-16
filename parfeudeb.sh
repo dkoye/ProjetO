@@ -19,3 +19,6 @@ iptables -t filter -P INPUT -j DROP
 iptables -t filter -P FORWARD -j DROP
 iptables -t filter -P OUTPUT -j ACCEPT
 
+#Gestion des flux encours
+iptables -t filter -A INPUT -m state --state NEW,ETABLISHED,RELATED -j ACCEPT
+
